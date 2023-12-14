@@ -364,6 +364,12 @@ variable "traefik_autoscaling" {
   description = "Should traefik enable Horizontal Pod Autoscaler."
 }
 
+variable "traefik_enable_persistence" {
+  type        = bool
+  default     = true
+  description = "Should traefik enable persistence using Persistent Volume Claims."
+}
+
 variable "traefik_redirect_to_https" {
   type        = bool
   default     = true

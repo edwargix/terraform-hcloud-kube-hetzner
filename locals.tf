@@ -597,6 +597,10 @@ autoscaling:
   minReplicas: ${local.ingress_replica_count}
   maxReplicas: ${local.ingress_max_replica_count}
 %{endif~}
+%{if var.traefik_enable_persistence~}
+persistence:
+  enabled: true
+%{endif~}
   EOT
 
   rancher_values = var.rancher_values != "" ? var.rancher_values : <<EOT
